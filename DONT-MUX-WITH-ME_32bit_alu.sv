@@ -109,7 +109,7 @@ endmodule
 
 module alu_128bit ( op1 , op2 , opsel , mode , result , c_flag , z_flag , o_flag , s_flag );
 
-    parameter DWIDTH = 128;
+    parameter DWIDTH = 32;
 
     input  logic [ DWIDTH -1:0] op1 ;
     input  logic [ DWIDTH -1:0] op2 ;

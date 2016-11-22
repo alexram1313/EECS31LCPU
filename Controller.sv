@@ -34,8 +34,8 @@ module Controller(
     output logic memwrite
     );
     
-    wire inst;
-    logic [31:0] instruct;
+    //wire inst;
+    //logic [31:0] instruct;
     //logic = instructionmem(inst);
     
     assign mux_sel1 = (instruction[0] == 1'b0)? 0:1;  //if LSB of instruction is 0, its a register type and selector set to 0; else 1 signifying immediate type

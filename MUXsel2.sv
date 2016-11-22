@@ -26,5 +26,5 @@ module MUXsel2(
     input logic [1:0]   MUXsel2,
     output logic[31:0]  Out_Data
     );
-    assign Out_Data = (MUXsel2 == 1'b1)?ALUresult:Read_Data;
+    assign Out_Data = (MUXsel2 == 1'b1)?Read_Data:ALUresult;
 endmodule

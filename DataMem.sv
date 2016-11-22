@@ -22,23 +22,21 @@
 
 module DataMem(
     input logic         clk,
-    input logic [6:0]   Address,
-    input logic [31:0]   Write_Data,
-    input logic         WE2,
-    output logic [31:0] Read_Data
-    //output logic        out
+    input logic [6:0]   address,
+    input logic [31:0]   write_data,
+    input logic         we2,
+    output logic [31:0] read_data
     );
     
     logic [31:0] mem [128:0];
     
     always_ff @(posedge clk) begin
-        if (WE2) begin
-            mem[Address] <= Write_Data;
+        if (we2) begin
+            mem[address] <= write_data;
         end
         
         else begin
-            Read_Data <= mem[Address];
+            read_data <= mem[address];
         end
     end
-    //assign out = Read_Data;
 endmodule

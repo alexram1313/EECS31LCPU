@@ -22,7 +22,7 @@
 
 module DataMem(
     input logic         clk,
-    input logic [31:0]   Address,
+    input logic [6:0]   Address,
     input logic [31:0]   Write_Data,
     input logic         WE2,
     output logic [31:0] Read_Data

@@ -3,13 +3,13 @@ module programcounter
 		input			rst,
 	 output logic [4:0]  		count
 	);
-logic [5:0] pr_state;
-logic  [4:0] nx_state;
+	logic [5:0] pr_state;
+	logic [5:0] nx_state;
 
-always_ff @ ( posedge clk, negedge rst) 
+always_ff @ ( posedge clk) 
 	begin
-	if ( !rst )
-		pr_state <= 0;
+	if ( rst )
+		pr_state <= 6'd0;
 	else
          	pr_state <= nx_state;
  	end
@@ -85,7 +85,7 @@ always_comb
 
 	
 count = nx_state;
-end
+	end
 
 
 endmodule

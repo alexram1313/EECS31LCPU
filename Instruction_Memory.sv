@@ -22,7 +22,7 @@
 
 module Instruction_Memory(
     input logic         clk,
-    input logic [6:0]   address,
+    input logic [5:0]   address,
     output logic [31:0] out_data
     );
     

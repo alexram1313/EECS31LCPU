@@ -20,11 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module MUXsel2(
-    input logic [31:0]  read_data,
-    input logic [31:0]  alu_result,
-    input logic [1:0]   muxsel2,
+module Mux(
+    input logic [31:0]  op1,
+    input logic [31:0]  op2,
+    input logic [1:0]   sel,
     output logic[31:0]  out_data
     );
-    assign out_data = (muxsel2 == 1'b1)?read_data:alu_result;
+    assign out_data = (sel == 1'b1)?op1:op2;
 endmodule

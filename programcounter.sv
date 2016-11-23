@@ -1,32 +1,35 @@
 module programcounter
 	(	input			clk,
 		input			rst,
-		output logic [4:0]  count
+	 output logic [4:0]  		count
 	);
-logic [4:0] pr_state;
+logic [5:0] pr_state;
 logic  [4:0] nx_state;
 
 always_ff @ ( posedge clk, negedge rst) 
 	begin
+	if ( !rst )
+		pr_state <= zero;
+	else
          	pr_state <= nx_state;
  	end
 	
 always_comb 
-	begin 
+	begin
 	nx_state = pr_state;
-	unique case ( pr_state ) begin
-		0 : nx_state = 5’d1;
-		1 : nx_state = 5’d2;
-		2 : nx_state = 5’d3;
-		3 : nx_state = 5’d4;
-		4 : nx_state = 5’d5;
-		5 : nx_state = 5’d6;
-		6 : nx_state = 5’d7;
-		7 : nx_state = 5’d8;
-		8 : nx_state = 5’d9;
-		9 : nx_state = 5’d10;
-		10 : nx_state = 5’d11;
-		11  : nx_state = 5’d12;
+	unique case ( pr_state ) 
+		0 : nx_state = 6’d1;
+		1 : nx_state = 6’d2;
+		2 : nx_state = 6’d3;
+		3 : nx_state = 6’d4;
+		4 : nx_state = 6’d5;
+		5 : nx_state = 6’d6;
+		6 : nx_state = 6’d7;
+		7 : nx_state = 6’d8;
+		8 : nx_state = 6’d9;
+		9 : nx_state = 6’d10;
+		10 :nx_state= 6’d11;
+		11 : nx_state = 5’d12;
 		12 : nx_state = 5’d13;
 		13 : nx_state = 5’d14;
 		14 : nx_state = 5’d15;
@@ -80,7 +83,7 @@ always_comb
 		62 : nx_state = 5’d63;
 		63 : nx_state = 5’d0;
 	
-	end 
+	
 count = nx_state;
 end
 

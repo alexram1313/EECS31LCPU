@@ -35,7 +35,8 @@ always_comb
 		17 : nx_state = 5’d18;
 		18 : nx_state = 5’d19;
 		19 : nx_state = 5’d20;
-		20 : nx_state = 5’d21; 		21 : nx_state = 5’d22;
+		20 : nx_state = 5’d21;
+		21 : nx_state = 5’d22;
 		22 : nx_state = 5’d23;
 		23 : nx_state = 5’d24;
 		24 : nx_state = 5’d25;
@@ -80,7 +81,7 @@ always_comb
 		63 : nx_state = 5’d0;
 	
 	end 
-count=nx_state;
+count = nx_state;
 end
 
 

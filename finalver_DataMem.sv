@@ -29,7 +29,8 @@ module DataMem(
     output logic [31:0] read_data
     );
     
-    logic [31:0] mem [127:0];
+     (* keep = "true" *) logic [31:0] mem [127:0];
+//    logic [31:0] mem [127:0];
     
     always_ff @(posedge clk) begin
         if(reset) begin

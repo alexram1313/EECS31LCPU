@@ -21,31 +21,38 @@
 
 
 module regfile(
-    input clk,
-    input rst,
-    input we1,
-    input [5:0] ra1,
-    input [5:0] ra2,
-    input [5:0] wa,
-    input [31:0] wd,
-    output [31:0] rd1,
-    output [31:0] rd2);
+    input logic clk,
+    input logic rst,
+    input logic we1,
+    input logic [5:0] ra1,
+    input logic [5:0] ra2,
+    input logic [5:0] wa,
+    input logic [31:0] wd,
+    output logic [31:0] rd1,
+    output logic [31:0] rd2);
     
-    //reg [31:0] regs [63:0] = '{default:0};
-    reg [31:0] regs [63:0] = '{default:'0};
+    (* keep = "true" *) reg [31:0] regs [63:0] = '{default:'0};
+//    reg [31:0] regs [63:0] = '{default:'0};
+    //reg [31:0] regs [63:0] = '{64{'0}};
+//    reg [31:0] regs [63:0];
+
     
-    assign rd1 = regs[ra1];
-    assign rd2 = regs[ra2];
+//    assign rd1 = regs[ra1];
+//    assign rd2 = regs[ra2];
     
     always_ff @(posedge clk) begin
           if (rst) begin
               //regs <= '{64{0}};
               regs <= '{64{'0}};
+//            for(int i=0;i<64;++i) begin
+//                regs[i] = 0;
+//            end
           end else begin
               if (we1) begin
                 regs[wa] <= wd;
               end
+              rd1 <= regs[ra1];
+              rd2 <= regs[ra2];
           end
       end
     
-endmodule

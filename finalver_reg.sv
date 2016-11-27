@@ -32,7 +32,7 @@ module regfile(
     output [31:0] rd2);
     
     //reg [31:0] regs [63:0] = '{default:0};
-    reg [31:0] regs [63:0] = '{default:32{0}};
+    reg [31:0] regs [63:0] = '{default:'0};
     
     assign rd1 = regs[ra1];
     assign rd2 = regs[ra2];
@@ -40,7 +40,7 @@ module regfile(
     always_ff @(posedge clk) begin
           if (rst) begin
               //regs <= '{64{0}};
-              regs <= '{64{32{0}}};
+              regs <= '{64{'0}};
           end else begin
               if (we1) begin
                 regs[wa] <= wd;

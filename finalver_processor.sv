@@ -69,7 +69,7 @@ module processor(
     Instruction_Memory L2(
         .address(address),
         .clk(clk),
-        .reset(reset),
+        //.reset(reset),
         .out_data(instruction)
     );
     
@@ -114,18 +114,24 @@ module processor(
         .sel(mux_sel1)
     );
     
+    wire c_flag, o_flag, z_flag,s_flag;
+    
     alu_128bit L7(
         .op1(op1),
         .op2(mux1_out),
         .mode(alumode),
         .opsel(aluopsel),
-        .result(alu_result)
+        .result(alu_result),
+        .c_flag(c_flag),
+        .o_flag(o_flag),
+        .z_flag(z_flag),
+        .s_flag(s_flag)
         
     );
     
     DataMem L8(
         .clk(clk),
-        .address(op1[5:0]),
+        .address(alu_result[6:0]),
         .write_data(op2),
         .we2(memwrite),
         .read_data(data_mem_out),

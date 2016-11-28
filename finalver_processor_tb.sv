@@ -23,12 +23,12 @@
 module processor_tb;
 
     logic clk;
-    logic reset;
+    logic rst;
     
     
     processor DUT(
         .clk(clk),
-        .reset(reset)
+        .rst(rst)
     );
     
     initial begin
@@ -37,8 +37,8 @@ module processor_tb;
     end
     
     initial begin
-        reset = 1'b1;
-        #30 reset = 1'b0;
+        rst = 1'b1;
+        #30 rst = 1'b0;
     end
 
 endmodule

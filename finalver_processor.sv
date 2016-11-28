@@ -22,7 +22,7 @@
 
 module processor(
     input logic clk,
-    input logic reset,
+    input logic rst,
     output logic [31:0] reg_write_data
     );
     //output of PC
@@ -62,14 +62,14 @@ module processor(
     
     PC L1(
         .clk(clk),
-        .reset(reset),
+        .rst(rst),
         .address(address)
     );
     
     Instruction_Memory L2(
         .address(address),
         .clk(clk),
-        //.reset(reset),
+        //.rst(rst),
         .out_data(instruction)
     );
     
@@ -96,7 +96,7 @@ module processor(
         .we1(regwrite),
         .rd1(op1),
         .rd2(op2),
-        .rst(reset)
+        .rst(rst)
     
     );
     
@@ -135,7 +135,7 @@ module processor(
         .write_data(op2),
         .we2(memwrite),
         .read_data(data_mem_out),
-        .reset(reset)
+        .rst(rst)
     );
     
     Mux L9(

@@ -131,7 +131,7 @@ module processor(
     
     DataMem L8(
         .clk(clk),
-        .address(alu_result[6:0]),
+        .address(op1[6:0]),
         .write_data(op2),
         .we2(memwrite),
         .read_data(data_mem_out),

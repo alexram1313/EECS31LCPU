@@ -37,8 +37,8 @@ module regfile(
 //    reg [31:0] regs [63:0];
 
     
-//    assign rd1 = regs[ra1];
-//    assign rd2 = regs[ra2];
+   assign rd1 = regs[ra1];
+   assign rd2 = regs[ra2];
     
     always_ff @(posedge clk) begin
           if (rst) begin
@@ -51,8 +51,8 @@ module regfile(
               if (we1) begin
                 regs[wa] <= wd;
               end
-              rd1 <= regs[ra1];
-              rd2 <= regs[ra2];
+//               rd1 <= regs[ra1];
+//               rd2 <= regs[ra2];
           end
       end
 endmodule

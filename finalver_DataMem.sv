@@ -42,9 +42,8 @@ module DataMem(
             mem[address] <= write_data;
         end
         
-        else begin
-            read_data <= mem[address];
-        end
+        assign read_data = mem[address];
+        
      end
    end
 endmodule

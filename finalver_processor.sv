@@ -23,7 +23,7 @@
 module processor(
     input logic clk,
     input logic reset,
-    output logic [31:0] seg_display
+    output logic [31:0] reg_write_data
     );
     //output of PC
     logic [5:0] address;
@@ -145,6 +145,6 @@ module processor(
       .out_data(mux2_out)
     );
     
-    assign seg_display = mux2_out;
+    assign reg_write_data = mux2_out;
     
 endmodule

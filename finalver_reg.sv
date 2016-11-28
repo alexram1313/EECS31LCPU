@@ -55,4 +55,5 @@ module regfile(
               rd2 <= regs[ra2];
           end
       end
+endmodule
     

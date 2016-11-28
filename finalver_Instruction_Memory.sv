@@ -22,7 +22,7 @@
 
 module Instruction_Memory(
     input logic         clk,
-    //input logic reset,
+    //input logic rst,
     input logic [5:0]   address,
     output logic [31:0] out_data
     );
@@ -61,7 +61,7 @@ module Instruction_Memory(
     
     always_ff @(posedge clk) begin
         //out_data <= mem[address];
-           //if (!reset) begin
+           //if (!rst) begin
                 out_data <= inst_mem[address];
            //end
            //else begin

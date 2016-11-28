@@ -41,9 +41,8 @@ module DataMem(
         if (we2) begin
             mem[address] <= write_data;
         end
-        
-        assign read_data = mem[address];
-        
+              
      end
    end
+    assign read_data = mem[address];
 endmodule

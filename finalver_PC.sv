@@ -22,14 +22,14 @@
 
 module PC(
     input clk,
-    input reset,
+    input rst,
     output [5:0] address
     //input enable
     );
      logic [5:0] temp;
     
     always_ff @(posedge clk) begin
-        if(reset) begin
+        if(rst) begin
             temp <= 0;
             end else begin
                 if(temp + 1 == 64) begin

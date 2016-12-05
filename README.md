@@ -1,5 +1,3 @@
-# EECS31LCPU
+# Don't Mux with Me – 32-bit CPU
 
-Derpy!
-
-Cam is awesome!
+Simple processor we were asked to design for class.
